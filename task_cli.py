@@ -75,7 +75,7 @@ def main():
         if len(sys.argv) < 3:
             print("Error: Please provide a task id that you want to delete.")
             return
-        delete_task_id = int(sys.argv[2]) + 1
+        delete_task_id = int(sys.argv[2]) 
 
 
         found_index = -1
