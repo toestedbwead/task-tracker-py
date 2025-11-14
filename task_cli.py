@@ -29,6 +29,7 @@ def save_tasks(tasks):
 # main function to handle cli commands
 def main():
     if len(sys.argv) < 2:
+        print("")
         print("Usage: python task_cli.py <command> [args]")
         return
 
@@ -115,8 +116,40 @@ def main():
         print(f"Task updated succesfully (ID: {new_updated_task_id})")
         save_tasks(tasks)
 
-    
+    elif command == 'mark':
+        if len(sys.argv) < 4:
+            print("")
+            print("Error: Please provide a task ID and status.")
+            return
         
+        valid_status = ['not done', 'in progress', 'done']
+
+        new_updated_task = int(sys.argv[2])
+        new_status = sys.argv[3]
+
+
+        if new_status not in valid_status:
+                print(f"Error: Status must be one of: {', '.join(valid_status)}")
+                return
+        
+        found_index = -1
+        now = datetime.now().isoformat()
+
+        for index, task in enumerate(tasks):
+            if task['id'] == new_updated_task:
+                task['status'] = new_status
+                task['updatedAt'] = now
+                found_index = index
+                break
+        
+        if found_index == -1:
+            print("")
+            print(f"Error: Task with ID {new_updated_task} not found.")
+            return
+        
+
+        print(f"Task Status updated succesfully. (ID: {new_updated_task})")
+        save_tasks(tasks)
         
 
 

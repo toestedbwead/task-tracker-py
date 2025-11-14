@@ -2,9 +2,9 @@
     {
         "id": 4,
         "description": "milklove",
-        "status": "todo",
+        "status": "completed",
         "createdAt": "2025-11-14T11:32:36.084852",
-        "updatedAt": "2025-11-14T11:32:36.084852"
+        "updatedAt": "2025-11-14T13:10:35.068137"
     },
     {
         "id": 5,
@@ -18,20 +18,20 @@
         "description": "finishing this code",
         "status": "not done",
         "createdAt": "2025-11-14T12:48:29.965597",
-        "updatedAt": "2025-11-14T12:48:29.965597"
+        "updatedAt": "2025-11-14T13:17:28.588346"
     },
     {
         "id": 7,
         "description": "watching gl shows",
-        "status": "not done",
+        "status": "in progress",
         "createdAt": "2025-11-14T12:49:39.689945",
-        "updatedAt": "2025-11-14T12:49:39.689945"
+        "updatedAt": "2025-11-14T13:00:46.815567"
     },
     {
         "id": 8,
         "description": "playing roblox",
-        "status": "not done",
+        "status": "done",
         "createdAt": "2025-11-14T12:50:26.720532",
-        "updatedAt": "2025-11-14T12:50:26.720532"
+        "updatedAt": "2025-11-14T13:01:13.757391"
     }
 ]
