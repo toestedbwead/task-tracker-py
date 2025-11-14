@@ -89,11 +89,15 @@ def main():
             return 
         
 
-        deleted_task = tasks.pop(found_index)
-        print(f"Task deleted succesfully (ID: {deleted_task['id']} )")
+        tasks.pop(found_index)
+        print(f"Task deleted succesfully (ID: {delete_task_id} )")
 
         save_tasks(tasks)
+
+    elif command == 'update':
+        pass
         
+
 
 
 if __name__ == "__main__":
