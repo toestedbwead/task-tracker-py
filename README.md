@@ -1,9 +1,8 @@
-# project url: https://roadmap.sh/projects/task-tracker
-
-
 # Task CLI
 
 A simple command-line task tracker that stores tasks in a JSON file.
+
+project url: https://roadmap.sh/projects/task-tracker
 
 ## Usage
 
