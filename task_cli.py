@@ -60,7 +60,7 @@ def main():
         new_task = {
         'id': new_id,
         'description': description,
-        'status': 'not done',
+        'status': 'todo',
         'createdAt': now,
         'updatedAt': now
         }
@@ -122,7 +122,7 @@ def main():
             print("Error: Please provide a task ID and status.")
             return
         
-        valid_status = ['not done', 'in progress', 'done']
+        valid_status = ['todo', 'in progress', 'done']
 
         new_updated_task = int(sys.argv[2])
         new_status = sys.argv[3]
@@ -150,6 +150,30 @@ def main():
 
         print(f"Task Status updated succesfully. (ID: {new_updated_task})")
         save_tasks(tasks)
+
+    elif command == 'list':
+        if len(sys.argv) == 2:
+            print("\nYour Tasks:")
+            print("-" * 40)
+            for task in tasks:
+                print(f"ID: {task['id']} | {task['description']} | Status: {task['status']}")
+            print(f"Total: {len(tasks)} tasks.")
+            print("-" * 40)
+        else: 
+            status_filter = sys.argv[2]
+            filtered_tasks = []
+
+            for task in tasks:
+                if task['status'] == status_filter:
+                    filtered_tasks.append(task)
+
+            print(f"\nYour {status_filter} Tasks:")
+            print("-" * 40)
+            for task in filtered_tasks:
+                print(f"ID: {task['id']} | {task['description']} | Status: {task['status']}")
+            print(f"Total: {len(filtered_tasks)} tasks.")
+            print("-" * 40)
+
         
 
 
@@ -163,3 +187,5 @@ if __name__ == "__main__":
     print("2. delete - delete task")
     print("3. update - update task description")
     print("4. mark - mark status as done, not done, in progress")
+    print("5. list - list all tasks")
+

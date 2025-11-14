@@ -2,9 +2,9 @@
     {
         "id": 4,
         "description": "milklove",
-        "status": "completed",
+        "status": "done",
         "createdAt": "2025-11-14T11:32:36.084852",
-        "updatedAt": "2025-11-14T13:10:35.068137"
+        "updatedAt": "2025-11-14T13:47:35.223643"
     },
     {
         "id": 5,
@@ -16,9 +16,9 @@
     {
         "id": 6,
         "description": "finishing this code",
-        "status": "not done",
+        "status": "todo",
         "createdAt": "2025-11-14T12:48:29.965597",
-        "updatedAt": "2025-11-14T13:17:28.588346"
+        "updatedAt": "2025-11-14T13:48:26.678526"
     },
     {
         "id": 7,
