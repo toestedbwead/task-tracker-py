@@ -28,8 +28,6 @@ def save_tasks(tasks):
 
 # main function to handle cli commands
 def main():
-    print("CLI Task Tracker")
-    print("Command List: add, update, delete")
     if len(sys.argv) < 2:
         print("Usage: python task_cli.py <command> [args]")
         return
@@ -61,7 +59,7 @@ def main():
         new_task = {
         'id': new_id,
         'description': description,
-        'status': 'todo',
+        'status': 'not done',
         'createdAt': now,
         'updatedAt': now
         }
@@ -95,10 +93,40 @@ def main():
         save_tasks(tasks)
 
     elif command == 'update':
-        pass
+        if len(sys.argv) < 4:
+            print("Error: Please provide a task description.")
+            return
+        new_updated_task_id = int(sys.argv[2])
+        new_description = sys.argv[3]
+
+        found_index = -1
+        now = datetime.now().isoformat()
+        for index, task in enumerate(tasks):
+            if task['id'] == new_updated_task_id:
+                task['description'] = new_description
+                task['updatedAt'] = now
+                found_index = index
+                break
+        
+        if found_index == -1:
+            print(f"Error: Task with ID {new_updated_task_id} not found.")
+            return
+        
+        print(f"Task updated succesfully (ID: {new_updated_task_id})")
+        save_tasks(tasks)
+
+    
+        
         
 
 
 
 if __name__ == "__main__":
     main() 
+    print("")
+    print("CLI Task Tracker Command List:")
+    print("")
+    print("1. add - create new task")
+    print("2. delete - delete task")
+    print("3. update - update task description")
+    print("4. mark - mark status as done, not done, in progress")
